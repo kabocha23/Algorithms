@@ -41,8 +41,7 @@
 
         SELECT grade.Name, grade.ID 
         FROM (
-                SELECT
-                *,
+                SELECT *,
                 (Midterm1 * 25 / 100) + (Midterm2 * 25 / 100) + (Final * 50/100) as opt1,
                 (Midterm1 * 50 / 100) + (Midterm2 * 50 / 100) as opt2,
                 Final as opt3
