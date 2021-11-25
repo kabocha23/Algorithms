@@ -7,11 +7,9 @@ function binarySearch(nums: number[], target: number): number {
         
         if(target === nums[mid]) {
             return mid;
-        }
-        if(target > nums[mid]){
+        } else if(target > nums[mid]){
             start = mid+1;
-        }
-        if(target < nums[mid]){
+        } else if(target < nums[mid]){
             end = mid+1;
         }
     }
