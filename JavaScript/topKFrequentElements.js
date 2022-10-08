@@ -18,6 +18,7 @@ const topKFrequent = (nums, k) => {
     let hash = {};
     let sol = [];
     let j = 0;
+    
     for(let i = 0; i < nums.length; i++) {
         if(!hash[nums[i]]) {
             hash[nums[i]] = 1;
@@ -25,14 +26,15 @@ const topKFrequent = (nums, k) => {
             hash[nums[i]] += 1;
         }
     }
-    console.log(hash)
+    
     let entries = Object.entries(hash);
     let sorted = entries.sort((a,b) => b[1] - a[1])
-    console.log(sorted)
+
     while(k > 0) {
         sol.push(sorted[j][0])
         k--;
         j++;
     }
+    
     return sol;
 };
