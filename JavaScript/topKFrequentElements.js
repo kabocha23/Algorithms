@@ -9,6 +9,10 @@
 // Input: nums = [1], k = 1
 // Output: [1]
 
+// create a hash table to store each element and its frequency
+// convert the hash table to an array so it can be sorted by (key)value
+// iterate again to add the k most frequent to solution array
+
 const topKFrequent = (nums, k) => {
     
     let hash = {};
