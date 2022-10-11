@@ -17,6 +17,15 @@
 // Input: s = "catsandog", wordDict = ["cats","dog","sand","and","cat"]
 // Output: false
 
+
+// create a table containing an index for each letter in string s
+// iterate through the table with nested loop, checking if the substring is in wordDict 
+// use true to signal the index of the end of any valid subword
+// the next nested loop starts at the end of each valid subword
+// if the last character of string s is the end of a valid subword, then the subword before that is valid as well
+// return the last result of the table
+
+
 const wordBreak = (s, wordDict) => {
     const table = new Array(s.length + 1).fill(false);
     
