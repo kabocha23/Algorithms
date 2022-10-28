@@ -15,6 +15,7 @@ class ListNode {
 // iterate through Linked List
 // recursively set sol.val to equal head.val, with sol.next as sol
 // building the list backwards
+// new ListNode(head.val, sol) setting this.next to sol points to the previous head, creating the reversed list
 const reverseList = (head: ListNode | null): ListNode | null => {
     let sol: ListNode | null = null;
     while(head) {
