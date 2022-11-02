@@ -14,7 +14,7 @@
 // Output: [[0,0,0],[0,0,0]]
 // Explanation: The starting pixel is already colored 0, so no changes are made to the image.
 
-// main function floodFill: if the new and old color are the same return the image
+// main function floodFill: if the current pixel and new color are the same return image
 // call helper function fill
 // helper function fill: check coordinates, if out of bounds, return
 // if current pixel is not equal to the previous color, return
@@ -27,17 +27,17 @@ const floodFill= (image: number[][], sr: number, sc: number, color: number): num
     return image;
 };
 
-const fill = (image: number[][], sr: number, sc: number, newColor: number, currColor: number): number[][] => {
+const fill = (image: number[][], sr: number, sc: number, newColor: number, currPixel: number): number[][] => {
     if(sr < 0 || sc < 0 || sr >= image.length || sc >= image[0].length) return image;
     
-    if(currColor !== image[sr][sc]) return image;
+    if(currPixel !== image[sr][sc]) return image;
     
     image[sr][sc] = newColor;
     
-    fill(image, sr-1, sc, newColor, currColor);
-    fill(image, sr, sc-1, newColor, currColor);
-    fill(image, sr+1, sc, newColor, currColor);
-    fill(image, sr, sc+1, newColor, currColor);
+    fill(image, sr-1, sc, newColor, currPixel);
+    fill(image, sr, sc-1, newColor, currPixel);
+    fill(image, sr+1, sc, newColor, currPixel);
+    fill(image, sr, sc+1, newColor, currPixel);
 
     return image;
 };
