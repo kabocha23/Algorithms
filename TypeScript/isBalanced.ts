@@ -21,6 +21,17 @@
 // recursive call will traverse until no left and right nodes, then add 1 for every node on the way back up
 // set overall tree height by taking lerger of left or right
 // check if difference between left and right height are greater than 1
+class TreeNode {
+    val: number
+    left: TreeNode | null
+    right: TreeNode | null
+    constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+        this.val = (val===undefined ? 0 : val)
+        this.left = (left===undefined ? null : left)
+        this.right = (right===undefined ? null : right)
+    }
+}
+
 const isBalanced = (root: TreeNode | null): boolean => {
     if(root === null) return true;
     let balanced: boolean = true;
