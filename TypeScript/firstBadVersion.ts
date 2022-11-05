@@ -15,7 +15,15 @@
 // Input: n = 1, bad = 1
 // Output: 1
 
-const solution = (isBadVersion: any) => {
+// we have n versions and know that the bad version is the mid point for bad to the right, good left
+// set start and end to beginning and end of version list
+// loop as long as start and end do not intersect
+// set mid to sublist / 2, rounded up
+// check if mid is bad and if one before mid is good, that means mid is the first bad
+// else if mid is not bad set the sublist to look right
+// else if mid is bad set the sublist to look left
+
+const firstBadversion = (isBadVersion: any) => {
 
     return (n: number): number => {
         let start: number = 0;
