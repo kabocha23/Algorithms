@@ -32,3 +32,23 @@ const majorityElement = (nums: number[]): number => {
     
     return major;
 };
+
+// refactored: instead of going through the entire array, immediately return the element that surpasses n/2
+const majorityElement2 = (nums: number[]): number => {
+    let majorCheck: {[key:number]: number} = {};
+    
+    if(nums.length === 1) return nums[0];
+    
+    for(let i = 0; i < nums.length; i++) {
+        if(majorCheck.hasOwnProperty(nums[i])) {
+            majorCheck[nums[i]] += 1;
+            if(majorCheck[nums[i]] > nums.length/2) {
+                return nums[i]
+            }
+        } else {
+            majorCheck[nums[i]] = 1;
+        }
+    }
+    
+    return 0;
+};
