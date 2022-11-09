@@ -14,9 +14,9 @@
 // initialize a variable to keep track of the max distance
 // create helper function for dfs
 // base case: return 0 when node is null
-// recursively call diameterCheck on left node and right node
+// recursively call diameterCheck on left node and right node to get the distance between them
 // set max distance variable to left+right if greater than previous max
-// return max of left or right, then add 1 for the current node
+// return max of left or right, then add 1 for the current node, to get the depth from this node
 // call helper function on the root and return the max distance 
 class TreeNode {
     val: number
